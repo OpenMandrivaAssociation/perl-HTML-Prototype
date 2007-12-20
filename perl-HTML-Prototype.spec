@@ -15,6 +15,7 @@ BuildRequires:  perl(Module::Build)
 BuildRequires:	perl(Class::Accessor)
 BuildRequires:  perl(HTML::Tree)
 BuildArch:	noarch
+Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Some code generators for Prototype, the famous JavaScript OO library. This
