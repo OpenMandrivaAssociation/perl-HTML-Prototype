@@ -1,7 +1,7 @@
 %define module	HTML-Prototype
 %define name	perl-%{module}
 %define version	1.48
-%define release %mkrel 1
+%define release %mkrel 3
 
 Name:		%{name}
 Version:	%{version}
