@@ -1,21 +1,21 @@
-%define module	HTML-Prototype
-%define name	perl-%{module}
-%define version	1.48
-%define release %mkrel 3
+%define upstream_name	 HTML-Prototype
+%define upstream_version 1.48
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Generate HTML and Javascript for the Prototype library
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}/
-Source:		http://www.cpan.org/modules/by-module/HTML/%{module}-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}/
+Source0:	http://www.cpan.org/modules/by-module/HTML/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:  perl(Module::Build)
 BuildRequires:	perl(Class::Accessor)
 BuildRequires:  perl(HTML::Tree)
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Some code generators for Prototype, the famous JavaScript OO library. This
@@ -24,7 +24,7 @@ mostly a port of the Ruby on Rails helper tags for JavaScript for use in
 Catalyst.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 perl -pi -e 'tr/\r//d;' README
 
 %build
@@ -38,13 +38,11 @@ perl -pi -e 'tr/\r//d;' README
 rm -rf %{buildroot}
 ./Build install destdir=%{buildroot}
 
+%clean
+rm -rf %{buildroot}
+
 %files
 %defattr(-,root,root)
 %doc README Changes
 %{perl_vendorlib}/HTML
 %{_mandir}/*/*
-
-%clean
-rm -rf %{buildroot}
-
-
