@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 1
+Release:    2
 
 Summary:	Generate HTML and Javascript for the Prototype library
 License:	Artistic/GPL
