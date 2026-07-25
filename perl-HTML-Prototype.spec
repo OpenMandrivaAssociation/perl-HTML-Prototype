@@ -2,14 +2,14 @@
 %define upstream_version 1.48
 
 Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    3
+Version:    %{upstream_version}
+Release:    4
 
 Summary:	Generate HTML and Javascript for the Prototype library
 License:	Artistic/GPL
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/modules/by-module/HTML/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/HTML-Prototype
+Source0:	https://cpan.metacpan.org/authors/id/E/ES/ESSKAR/HTML-Prototype-%{upstream_version}.tar.gz
 
 BuildRequires:  perl(Module::Build)
 BuildRequires:	perl(Class::Accessor)
@@ -70,7 +70,7 @@ rm -rf %{buildroot}
 + 2006-08-29 10:19:23 (58585)
 - new version
 
-* Thu Aug 03 2006 Nicolas Lécureuil <neoclust@mandriva.org>
+* Thu Aug 03 2006 Nicolas Lï¿½cureuil <neoclust@mandriva.org>
 + 2006-08-03 15:02:10 (43219)
 - import perl-HTML-Prototype-1.45-1mdv2007.0
 
@@ -91,10 +91,10 @@ rm -rf %{buildroot}
 - fix directory ownership
 - fix doc file encoding
 
-* Mon Oct 10 2005 Nicolas Lécureuil <neoclust@mandriva.org> 1.35-3mdk
+* Mon Oct 10 2005 Nicolas Lï¿½cureuil <neoclust@mandriva.org> 1.35-3mdk
 - Fix BuildRequires
 
-* Fri Sep 30 2005 Nicolas Lécureuil <neoclust@mandriva.org> 1.35-2mdk
+* Fri Sep 30 2005 Nicolas Lï¿½cureuil <neoclust@mandriva.org> 1.35-2mdk
 - Buildrequires fix
 
 * Wed Sep 21 2005 Guillaume Rousse <guillomovitch@mandriva.org> 1.35-1mdk
