@@ -1,15 +1,13 @@
 %define upstream_name	 HTML-Prototype
-%define upstream_version 1.48
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:    4
+Version:    1.48
+Release:    5
 
 Summary:	Generate HTML and Javascript for the Prototype library
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/HTML-Prototype
-Source0:	https://cpan.metacpan.org/authors/id/E/ES/ESSKAR/HTML-Prototype-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/E/ES/ESSKAR/HTML-Prototype-%{version}.tar.gz
 
 BuildRequires:  perl(Module::Build)
 BuildRequires:	perl(Class::Accessor)
@@ -24,7 +22,7 @@ mostly a port of the Ruby on Rails helper tags for JavaScript for use in
 Catalyst.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 perl -pi -e 'tr/\r//d;' README
 
 %build
@@ -51,9 +49,7 @@ rm -rf %{buildroot}
 %changelog
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 1.480.0-1mdv2010.0
 + Revision: 403257
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 1.48-3mdv2009.0
+- rebuild using %1.48 Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 1.48-3mdv2009.0
 + Revision: 241476
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
